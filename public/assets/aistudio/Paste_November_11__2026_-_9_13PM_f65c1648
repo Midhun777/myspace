@@ -1,0 +1,1724 @@
+# MYSPACE
+## Complete Android Application – Product Description and Technical Specification
+
+**Project Name:** MySpace  
+**Application Type:** Personal Productivity, Academic Management and Study Companion  
+**Platform:** Android  
+**Package Name:** `com.myspace.productivity`  
+**Architecture:** Offline-first hybrid architecture  
+**Frontend:** React Native with Expo  
+**Backend:** Node.js and Express.js  
+**Database:** SQLite (local) and MongoDB Atlas (cloud)  
+**Authentication:** Email and password with JWT  
+**File Storage:** Local device storage and cloud object storage  
+**Theme:** Light Mode and Dark Mode  
+**Primary Timezone:** Asia/Kolkata
+
+---
+
+# 1. PROJECT OVERVIEW
+
+MySpace is an all-in-one Android productivity and academic management application designed to help an individual organize, manage and improve different aspects of their personal life, college activities, studies and daily routines from a single application.
+
+The application combines the capabilities of a task manager, academic management system, attendance tracker, timetable planner, note-taking application, study planner, Pomodoro timer, habit tracker, examination preparation system and productivity analytics platform.
+
+Instead of depending on multiple applications for managing daily tasks, college schedules, assignments, attendance, marks, examinations, notes, study sessions and personal habits, MySpace brings all these activities together into one organized digital workspace.
+
+The main objective is to provide a centralized platform where users can manage their responsibilities, monitor their academic performance, organize their study schedules, maintain productive habits and track their progress.
+
+MySpace is designed around three important principles:
+
+1. **Organization:** Keep personal and academic information organized in one place.
+2. **Productivity:** Help users complete tasks, maintain routines and use their time effectively.
+3. **Academic management:** Make it easier to manage semesters, subjects, attendance, examinations, assignments, marks and study preparation.
+
+A major characteristic of MySpace is its offline-first architecture. Users should be able to access and update their information without an active internet connection. Changes are stored locally and synchronized with cloud storage automatically when connectivity becomes available.
+
+The application will provide a clean, modern and attractive interface with both light and dark themes, simple navigation, interactive dashboards and a universal Quick Add feature.
+
+MySpace is intended to function as a personal digital workspace that users can depend on throughout their academic and everyday lives.
+
+---
+
+# 2. MAIN OBJECTIVES
+
+The primary objectives of MySpace are:
+
+- Provide one centralized application for personal productivity and college management.
+- Allow users to create, organize, prioritize and monitor daily tasks.
+- Manage multiple academic semesters and their associated subjects.
+- Record and calculate subject-wise attendance.
+- Maintain weekly college timetables.
+- Manage examinations, assignments and academic deadlines.
+- Store examination marks and calculate grades, SGPA and CGPA.
+- Organize syllabus topics and examination preparation.
+- Improve concentration through Pomodoro-based study sessions.
+- Maintain daily habits and monitor consistency.
+- Store personal notes and academic documents.
+- Display meaningful productivity and academic analytics.
+- Provide notifications for important activities and deadlines.
+- Support offline operations with automatic cloud synchronization.
+- Allow users to export, back up and restore their information.
+
+---
+
+# 3. APPLICATION MODULES
+
+MySpace consists of the following major modules:
+
+1. Dashboard and Overview
+2. Task Management
+3. Category Management
+4. College Management
+5. Semester Management
+6. Subject Management
+7. Attendance Tracker
+8. Timetable Manager
+9. Examination Management
+10. Assignment Management
+11. Marks and Grade Management
+12. GPA and CGPA Calculator
+13. Exam Preparation Tracker
+14. Pomodoro Focus Timer
+15. Notes Management
+16. Document and Attachment Management
+17. Habit Tracker
+18. Calendar and Scheduling
+19. Reminder and Notification Management
+20. Productivity Analytics
+21. Universal Quick Add
+22. Data Export and Backup
+23. User Profile and Settings
+24. Offline Database and Cloud Synchronization
+
+---
+
+# 4. DASHBOARD AND OVERVIEW
+
+The Dashboard is the main screen of MySpace. It provides a consolidated overview of the user's daily activities, upcoming responsibilities, academic information and productivity.
+
+The dashboard should present important information without overwhelming the user.
+
+## 4.1 Welcome section
+
+The dashboard displays:
+
+- User's name.
+- Current date and day.
+- A personalized greeting.
+- Current semester.
+- A quick overview of today's activities.
+
+Example:
+
+"Good morning! Here's your day."
+
+## 4.2 Today's task overview
+
+Displays:
+
+- Total tasks scheduled for today.
+- Completed tasks.
+- Pending tasks.
+- Overdue tasks.
+- High-priority tasks.
+- Task completion percentage.
+
+Users should be able to open a task directly from the dashboard.
+
+## 4.3 Academic overview
+
+Displays:
+
+- Current semester.
+- Active subjects.
+- Overall attendance percentage.
+- Subjects with low attendance.
+- Upcoming examinations.
+- Upcoming assignment deadlines.
+- Latest examination results.
+- Current SGPA and CGPA, when sufficient results are available.
+
+## 4.4 Today's timetable
+
+Displays:
+
+- Today's scheduled classes.
+- Subject names.
+- Class timings.
+- Classroom information.
+- Teacher information.
+- Current or next scheduled class.
+
+## 4.5 Productivity overview
+
+Displays:
+
+- Today's completed tasks.
+- Total focus time.
+- Completed Pomodoro sessions.
+- Active habits.
+- Current habit streaks.
+- Daily productivity progress.
+
+## 4.6 Upcoming activities
+
+A consolidated section showing:
+
+- Upcoming tasks.
+- Assignment deadlines.
+- Examinations.
+- Timetable events.
+- Scheduled reminders.
+
+## 4.7 Dashboard customization
+
+The user should be able to customize which dashboard sections are visible and reorder supported widgets.
+
+---
+
+# 5. TASK MANAGEMENT SYSTEM
+
+The Task Management module allows users to organize personal, academic and professional responsibilities.
+
+## 5.1 Task creation
+
+Users can create tasks with the following information:
+
+- Task title.
+- Description.
+- Category.
+- Priority.
+- Start date.
+- Due date.
+- Due time.
+- Reminder.
+- Completion status.
+- Additional notes.
+
+## 5.2 Task priorities
+
+Each task can have one of the following priorities:
+
+- Low.
+- Medium.
+- High.
+- Urgent.
+
+Priority indicators should make important tasks easy to identify.
+
+## 5.3 Task status
+
+Supported statuses:
+
+- Pending.
+- In progress.
+- Completed.
+- Cancelled.
+
+## 5.4 Categories
+
+Users can create and manage custom categories.
+
+Examples:
+
+- Personal.
+- College.
+- Coding.
+- Projects.
+- Learning.
+- Health.
+- Finance.
+- Other.
+
+Each category can have a custom name, color and icon.
+
+## 5.5 Task operations
+
+Users can:
+
+- Create tasks.
+- Edit tasks.
+- Delete tasks.
+- Mark tasks completed.
+- Reopen completed tasks.
+- Change priority.
+- Change deadlines.
+- Add reminders.
+- Filter and search tasks.
+
+## 5.6 Task recurrence
+
+The application supports recurring tasks.
+
+Recurrence options:
+
+- Daily.
+- Weekly.
+- Monthly.
+- Selected weekdays.
+- Custom intervals.
+- Recurring until a specified date.
+
+Examples:
+
+- Study programming every day.
+- Revise DBMS every Monday, Wednesday and Friday.
+- Pay a bill on the first day of every month.
+
+Each generated occurrence should have its own completion status and history.
+
+Completing one occurrence should not automatically mark every future occurrence as completed.
+
+## 5.7 Task filters
+
+Users can filter tasks based on:
+
+- Date.
+- Category.
+- Priority.
+- Completion status.
+- Overdue status.
+
+## 5.8 Task history
+
+Completed and cancelled tasks should remain available in task history, subject to the user's deletion and retention preferences.
+
+---
+
+# 6. COLLEGE MANAGEMENT SYSTEM
+
+The College Management module is designed to organize the user's academic information.
+
+It connects semesters, subjects, attendance, timetables, examinations, assignments, marks and study preparation.
+
+## 6.1 Semester management
+
+Users can create and manage multiple academic semesters.
+
+Each semester includes:
+
+- Semester name.
+- Semester number.
+- Academic year.
+- Start date.
+- End date.
+- Semester status.
+- Associated subjects.
+- Examinations.
+- Assignments.
+- Attendance records.
+- Academic results.
+
+Semester statuses:
+
+- Upcoming.
+- Active.
+- Completed.
+- Archived.
+
+Users can switch between semesters and access historical academic information.
+
+Each semester maintains its own academic records.
+
+## 6.2 Subject management
+
+Each subject contains:
+
+- Subject name.
+- Subject code.
+- Semester.
+- Credit value.
+- Faculty or teacher.
+- Optional subject description.
+- Target attendance percentage.
+
+Users can add, edit and remove subjects.
+
+All subject-related information should be linked to the corresponding subject record.
+
+---
+
+# 7. ATTENDANCE TRACKER
+
+The Attendance Tracker helps users maintain and monitor attendance for individual college subjects.
+
+## 7.1 Attendance recording
+
+Users can record attendance for each scheduled class.
+
+Supported statuses:
+
+- Present.
+- Absent.
+- Optional additional statuses such as cancelled or excused.
+
+Each attendance record contains:
+
+- Subject.
+- Semester.
+- Date.
+- Class or period number.
+- Attendance status.
+- Optional notes.
+
+## 7.2 Attendance calculations
+
+The application calculates attendance automatically.
+
+Attendance percentage:
+
+Attendance Percentage = (Classes Attended / Total Counted Classes) × 100
+
+For example:
+
+- Total classes: 40.
+- Classes attended: 32.
+- Classes missed: 8.
+- Attendance: 80%.
+
+## 7.3 Attendance dashboard
+
+Displays:
+
+- Overall attendance.
+- Subject-wise attendance.
+- Total classes.
+- Classes attended.
+- Classes missed.
+- Attendance trends.
+
+## 7.4 Attendance target
+
+Users can configure an attendance target, such as 75%.
+
+The application should calculate:
+
+- Whether the user currently meets the target.
+- How many additional classes are required to reach the target.
+- How many classes can be missed while remaining above the target.
+- Whether the target is mathematically achievable.
+
+Calculations should account for future classes and the institution's attendance rules.
+
+## 7.5 Low-attendance notifications
+
+The application can generate warnings when a subject's attendance falls below the configured target or a warning threshold.
+
+---
+
+# 8. TIMETABLE MANAGER
+
+The Timetable Manager organizes weekly college schedules.
+
+## 8.1 Timetable creation
+
+Users can create timetable entries containing:
+
+- Subject.
+- Day of the week.
+- Start time.
+- End time.
+- Classroom.
+- Teacher.
+- Optional notes.
+
+## 8.2 Weekly timetable
+
+The application displays a complete weekly timetable from Monday to Sunday.
+
+Users can switch between:
+
+- Daily view.
+- Weekly view.
+
+## 8.3 Today's classes
+
+The application automatically displays:
+
+- Today's subjects.
+- Class start and end times.
+- Current class.
+- Next class.
+- Upcoming classes.
+- Free periods.
+
+## 8.4 Class reminders
+
+Users can receive notifications before scheduled classes.
+
+## 8.5 Timetable integration
+
+Timetable entries should be connected with:
+
+- Attendance recording.
+- Calendar.
+- Subject information.
+- Class reminders.
+
+When a class is selected, the user should be able to record attendance directly.
+
+---
+
+# 9. EXAMINATION MANAGEMENT
+
+The Examination Management module organizes academic examinations.
+
+## 9.1 Examination creation
+
+Users can create examinations with:
+
+- Examination name.
+- Examination type.
+- Semester.
+- Subject.
+- Examination date.
+- Start time.
+- Duration.
+- Maximum marks.
+- Optional notes.
+
+Supported examination types include:
+
+- Series Examination 1.
+- Series Examination 2.
+- Model Examination.
+- Mid-term Examination.
+- Internal Assessment.
+- Practical Examination.
+- University Examination.
+- Custom examination types.
+
+## 9.2 Examination calendar
+
+All examinations should appear in the application calendar.
+
+## 9.3 Examination reminders
+
+Users can receive notifications before examinations.
+
+## 9.4 Examination history
+
+Completed examinations should remain available with their marks, results and preparation records.
+
+---
+
+# 10. ASSIGNMENT MANAGEMENT
+
+The Assignment Management module helps users organize academic submissions.
+
+## 10.1 Assignment creation
+
+Each assignment can contain:
+
+- Assignment title.
+- Subject.
+- Semester.
+- Description.
+- Assigned date.
+- Deadline.
+- Submission status.
+- Submission date.
+- Notes.
+- Supporting attachments.
+
+## 10.2 Assignment status
+
+Supported statuses:
+
+- Not started.
+- In progress.
+- Completed.
+- Submitted.
+- Overdue.
+
+## 10.3 Assignment tracking
+
+The application should display:
+
+- Pending assignments.
+- Completed assignments.
+- Submitted assignments.
+- Upcoming deadlines.
+- Overdue submissions.
+
+## 10.4 Document attachments
+
+Users should be able to attach relevant PDFs, images and documents to assignments.
+
+---
+
+# 11. MARKS MANAGEMENT
+
+The Marks Management module records academic performance across examinations.
+
+## 11.1 Marks entry
+
+Users can enter:
+
+- Examination.
+- Subject.
+- Maximum marks.
+- Obtained marks.
+- Optional remarks.
+
+## 11.2 Marks calculations
+
+The application calculates:
+
+- Subject percentage.
+- Total marks.
+- Maximum marks.
+- Average marks.
+- Examination-wise performance.
+
+Percentage:
+
+Percentage = (Obtained Marks / Maximum Marks) × 100
+
+## 11.3 Performance history
+
+Users can compare performance across:
+
+- Subjects.
+- Series examinations.
+- Model examinations.
+- Semester examinations.
+- Different semesters.
+
+---
+
+# 12. GRADE, SGPA AND CGPA CALCULATOR
+
+The application includes a configurable academic grading system.
+
+Different colleges and universities may use different grading scales. Therefore, MySpace should allow the user to configure grading rules.
+
+## 12.1 Grade calculation
+
+Based on configured mark ranges, the application can calculate subject grades and grade points.
+
+## 12.2 SGPA calculation
+
+For credit-based grading:
+
+SGPA = Sum of (Subject Credits × Subject Grade Points) / Total Subject Credits
+
+## 12.3 CGPA calculation
+
+CGPA should be calculated according to the configured institution's official rules.
+
+For a simple credit-weighted cumulative calculation:
+
+CGPA = Sum of (Semester Credits × Semester Grade Points) / Total Counted Credits
+
+The application should not assume every institution uses this exact method.
+
+## 12.4 Academic performance dashboard
+
+Displays:
+
+- Current semester SGPA.
+- Overall CGPA.
+- Subject-wise grades.
+- Credit information.
+- Semester comparison.
+- Academic performance trends.
+
+---
+
+# 13. EXAM PREPARATION TRACKER
+
+The Exam Preparation Tracker helps users plan and monitor their examination preparation.
+
+## 13.1 Syllabus management
+
+Users can create topics under individual subjects and examinations.
+
+Each topic contains:
+
+- Topic name.
+- Subject.
+- Examination.
+- Preparation status.
+- Planned study duration.
+- Actual study duration.
+- Revision count.
+- Optional notes.
+
+## 13.2 Preparation statuses
+
+- Not started.
+- In progress.
+- Completed.
+- Needs revision.
+
+## 13.3 Preparation progress
+
+The application calculates:
+
+Preparation Progress = (Completed Topics / Total Topics) × 100
+
+## 13.4 Revision tracking
+
+Users can record how many times a topic has been revised.
+
+## 13.5 Examination countdown
+
+The dashboard can display the number of days remaining until an examination.
+
+## 13.6 Study planning
+
+Users can create study tasks linked to examination topics and schedule revision sessions.
+
+---
+
+# 14. POMODORO FOCUS TIMER
+
+The Pomodoro Focus Timer helps users concentrate on academic and personal work.
+
+## 14.1 Timer modes
+
+Default timer configuration:
+
+- Focus session: 25 minutes.
+- Short break: 5 minutes.
+- Long break: 15 minutes.
+
+Users can customize all durations.
+
+## 14.2 Focus session
+
+Before starting a session, the user can optionally select:
+
+- Task.
+- Subject.
+- Examination.
+- Study topic.
+
+## 14.3 Session controls
+
+- Start.
+- Pause.
+- Resume.
+- Stop.
+- Reset.
+
+## 14.4 Focus statistics
+
+The application records:
+
+- Total focus time.
+- Completed sessions.
+- Interrupted sessions.
+- Daily study duration.
+- Weekly study duration.
+- Subject-wise focus time.
+
+## 14.5 Focus history
+
+All completed sessions should be available for reviewing productivity.
+
+The timer should use reliable time tracking so it can recover correctly after the app is minimized or the device is restarted.
+
+---
+
+# 15. NOTES MANAGEMENT
+
+The Notes module provides a centralized place for storing personal and academic information.
+
+## 15.1 Note creation
+
+Each note can contain:
+
+- Title.
+- Text content.
+- Category.
+- Semester.
+- Subject.
+- Creation date.
+- Last updated date.
+- Pin status.
+
+## 15.2 Note organization
+
+Users can organize notes by:
+
+- Personal.
+- College.
+- Subject.
+- Semester.
+- Projects.
+- Custom categories.
+
+## 15.3 Note operations
+
+- Create.
+- Edit.
+- Delete.
+- Search.
+- Pin.
+- Unpin.
+- Archive.
+
+## 15.4 Subject-wise notes
+
+Users can access notes associated with a particular subject directly from the subject screen.
+
+## 15.5 Offline notes
+
+Notes should be stored locally and available without internet access.
+
+---
+
+# 16. DOCUMENT AND ATTACHMENT MANAGEMENT
+
+The attachment system allows users to store and associate documents with application records.
+
+Supported file types can include:
+
+- PDF documents.
+- Images.
+- Text documents.
+- Other explicitly supported file formats.
+
+## 16.1 Attachment locations
+
+Documents can be associated with:
+
+- Notes.
+- Assignments.
+- Subjects.
+- Examinations.
+- Other supported records.
+
+## 16.2 File operations
+
+Users can:
+
+- Select documents from device storage.
+- Upload documents to cloud storage.
+- View supported files.
+- Download files.
+- Delete attachments.
+- View file details.
+
+## 16.3 Storage architecture
+
+Files should be stored locally when available and uploaded to secure cloud object storage.
+
+MongoDB should store attachment metadata and storage references rather than large file contents.
+
+The application must handle upload failures and resume or retry uploads where practical.
+
+---
+
+# 17. HABIT TRACKER
+
+The Habit Tracker helps users establish and maintain consistent daily routines.
+
+## 17.1 Habit creation
+
+Users can create habits with:
+
+- Habit name.
+- Description.
+- Frequency.
+- Target.
+- Unit.
+- Start date.
+- Optional reminder.
+
+Examples:
+
+- Study for two hours.
+- Read ten pages.
+- Practice programming.
+- Exercise.
+- Drink sufficient water.
+
+## 17.2 Habit completion
+
+Users can mark habits as completed or record measurable progress.
+
+## 17.3 Habit statistics
+
+Displays:
+
+- Today's habit completion.
+- Daily completion percentage.
+- Weekly progress.
+- Monthly progress.
+- Current streak.
+- Longest streak.
+- Missed days.
+
+## 17.4 Habit history
+
+Users can view past habit records through a calendar or history view.
+
+Streak calculations should follow the selected habit frequency and configured schedule.
+
+---
+
+# 18. CALENDAR AND SCHEDULING
+
+The Calendar module combines important events from different application modules.
+
+## 18.1 Calendar events
+
+The calendar can display:
+
+- Tasks.
+- Recurring tasks.
+- Assignments.
+- Examinations.
+- Timetable entries.
+- Reminders.
+- Other scheduled events.
+
+## 18.2 Calendar views
+
+- Daily view.
+- Weekly view.
+- Monthly view.
+- Upcoming events.
+
+## 18.3 Calendar integration
+
+Selecting an event should open its associated record.
+
+For example, selecting an examination should open its examination details and preparation progress.
+
+---
+
+# 19. REMINDER AND NOTIFICATION SYSTEM
+
+MySpace includes a notification system for important activities.
+
+## 19.1 Task reminders
+
+Notifications can be generated for scheduled tasks and approaching deadlines.
+
+## 19.2 Assignment reminders
+
+Users can receive reminders before assignment deadlines.
+
+## 19.3 Examination reminders
+
+Notifications can be scheduled for upcoming examinations.
+
+## 19.4 Timetable notifications
+
+Users can receive alerts before scheduled classes.
+
+## 19.5 Habit reminders
+
+Users can schedule reminders for daily or recurring habits.
+
+## 19.6 Attendance warnings
+
+The application can notify users when attendance falls below their configured target.
+
+## 19.7 Daily briefing
+
+A configurable morning summary can include:
+
+- Today's tasks.
+- Today's timetable.
+- Upcoming examinations.
+- Pending assignments.
+- Habit reminders.
+
+## 19.8 Notification settings
+
+Users should be able to configure notification preferences individually for each module.
+
+Local notifications should handle device-side reminders. Remote notifications can be added where cloud-triggered notifications are required.
+
+---
+
+# 20. PRODUCTIVITY ANALYTICS
+
+The Analytics module provides meaningful insights into personal productivity and academic performance.
+
+## 20.1 Task analytics
+
+Displays:
+
+- Tasks created.
+- Tasks completed.
+- Tasks pending.
+- Overdue tasks.
+- Completion percentage.
+- Daily and weekly trends.
+
+## 20.2 Focus analytics
+
+Displays:
+
+- Total focus time.
+- Completed Pomodoro sessions.
+- Average daily focus time.
+- Weekly study hours.
+- Subject-wise focus distribution.
+
+## 20.3 Habit analytics
+
+Displays:
+
+- Habit completion rate.
+- Current streaks.
+- Longest streaks.
+- Weekly and monthly consistency.
+
+## 20.4 Academic analytics
+
+Displays:
+
+- Subject-wise attendance.
+- Overall attendance.
+- Marks and percentages.
+- SGPA and CGPA.
+- Semester comparisons.
+- Examination performance.
+
+Analytics should be generated from stored records rather than manually entered summary values.
+
+---
+
+# 21. UNIVERSAL QUICK ADD
+
+Universal Quick Add is a global feature accessible from the main application screens.
+
+It allows users to create new records without navigating through multiple menus.
+
+## 21.1 Quick Add options
+
+The menu should support:
+
+- New task.
+- New note.
+- New assignment.
+- New examination.
+- New reminder.
+- New habit.
+- Start focus session.
+- New calendar event.
+- Record attendance.
+
+Additional options can be introduced as the application grows.
+
+## 21.2 User experience
+
+The Quick Add button should remain easily accessible throughout the application.
+
+Selecting an option should open a compact creation interface with only the necessary fields.
+
+The goal is to minimize the number of steps required to record information.
+
+---
+
+# 22. DATA EXPORT, BACKUP AND RESTORE
+
+The application should provide tools for protecting and transferring personal information.
+
+## 22.1 Export formats
+
+**JSON:** Complete structured application data.
+
+**CSV:** Tasks, subjects, attendance, marks, habits and other suitable tabular records.
+
+**PDF:** Academic summaries, attendance reports and productivity reports.
+
+**ZIP:** Full backup containing supported structured data and associated attachments.
+
+## 22.2 Backup functionality
+
+Users should be able to:
+
+- Create a manual backup.
+- Use automatic cloud backup.
+- Export individual modules.
+- Export an entire semester.
+- Export all application data.
+
+## 22.3 Restore functionality
+
+Users should be able to restore previously created backups.
+
+The application must validate backup structure, version compatibility and data integrity before restoring.
+
+Restoring should not silently overwrite newer information.
+
+---
+
+# 23. USER PROFILE AND SETTINGS
+
+The Settings module controls the application's configuration.
+
+## 23.1 Profile management
+
+- User name.
+- Email address.
+- Account information.
+- Profile preferences.
+
+## 23.2 Theme settings
+
+Supported options:
+
+- Follow system.
+- Light mode.
+- Dark mode.
+
+The theme should remain consistent across all application screens.
+
+## 23.3 Notification settings
+
+Users can configure reminders, alerts and notification preferences.
+
+## 23.4 General settings
+
+- Timezone.
+- Date format.
+- Time format.
+- Week start day.
+- Default task priority.
+- Default attendance target.
+- Pomodoro durations.
+
+## 23.5 Account management
+
+- Login.
+- Registration.
+- Logout.
+- Password change.
+- Account data export.
+- Account deletion.
+
+---
+
+# 24. USER INTERFACE AND NAVIGATION DESIGN
+
+The application should follow a clean, modern and consistent design system.
+
+## 24.1 Main navigation
+
+A proposed bottom navigation structure:
+
+1. Home.
+2. Tasks.
+3. College.
+4. Calendar.
+5. Settings.
+
+A global Quick Add button should be accessible without interfering with navigation.
+
+Other modules can be accessed through the College section, dashboard shortcuts or dedicated navigation screens.
+
+## 24.2 Design principles
+
+- Minimal and attractive interface.
+- Clear typography.
+- Consistent spacing.
+- Rounded cards and components.
+- Easy-to-understand icons.
+- Appropriate visual hierarchy.
+- Responsive layouts.
+- Smooth navigation.
+- Light and dark themes.
+- Accessible controls.
+
+The design should avoid overcrowded dashboards and unnecessary information.
+
+## 24.3 Consistent components
+
+Reusable components should include:
+
+- Buttons.
+- Input fields.
+- Cards.
+- Progress indicators.
+- Charts.
+- Calendar components.
+- Date and time selectors.
+- Dialogs.
+- Bottom sheets.
+- Empty states.
+- Loading indicators.
+- Error messages.
+
+---
+
+# 25. TECHNICAL ARCHITECTURE
+
+MySpace will use an offline-first client-server architecture.
+
+## 25.1 Android frontend
+
+**Technology:** React Native + Expo
+
+Responsibilities:
+
+- Application screens.
+- Navigation.
+- User interactions.
+- Local data access.
+- Notification scheduling.
+- Offline operations.
+- File selection.
+- Synchronization management.
+
+**Additional libraries and tools:**
+
+- Expo Router for navigation.
+- NativeWind for styling.
+- Zustand for state management.
+- Expo SQLite for local database.
+- Expo Notifications for local notifications.
+- Expo FileSystem for local files.
+- Zod for data validation.
+
+## 25.2 Backend
+
+**Technology:** Node.js + Express.js
+
+Responsibilities:
+
+- User authentication.
+- API endpoints.
+- Request validation.
+- Data processing.
+- User authorization.
+- Cloud database operations.
+- Synchronization.
+- Backup operations.
+- File upload coordination.
+- Academic calculations and analytics.
+
+## 25.3 Cloud database
+
+**Technology:** MongoDB Atlas
+
+Stores structured application information.
+
+The application must never connect directly to MongoDB using database credentials.
+
+All cloud database access must pass through authenticated backend APIs.
+
+## 25.4 Local database
+
+**Technology:** SQLite
+
+SQLite stores application information on the Android device.
+
+It allows the application to function without an internet connection.
+
+## 25.5 Cloud file storage
+
+An object storage service such as Cloudinary or an S3-compatible service will store attachments.
+
+MongoDB will retain the file metadata, owner information and storage references.
+
+---
+
+# 26. DATABASE DESIGN
+
+Database name: `myspace_db`
+
+The proposed cloud design contains 17 core collections.
+
+## 26.1 Account and organization
+
+1. `users` – User account and preferences.
+2. `categories` – Custom task categories.
+3. `semesters` – Academic semesters.
+4. `subjects` – Subject details and credits.
+
+## 26.2 Productivity
+
+5. `tasks` – Tasks and recurring-task configuration.
+6. `reminders` – Scheduled reminder information.
+7. `habits` – Habit definitions.
+8. `habitLogs` – Daily habit completion records.
+9. `focusSessions` – Pomodoro and study sessions.
+
+## 26.3 Academic management
+
+10. `exams` – Examination information.
+11. `marks` – Examination marks and results.
+12. `assignments` – Academic assignments.
+13. `attendanceRecords` – Individual class attendance.
+14. `timetableEntries` – Weekly timetable entries.
+15. `studyTopics` – Examination preparation topics.
+
+## 26.4 Notes and documents
+
+16. `notes` – Personal and academic notes.
+17. `attachments` – Document metadata and storage references.
+
+## 26.5 Common record fields
+
+Most user-owned records should contain:
+
+- `_id`.
+- `userId`.
+- `createdAt`.
+- `updatedAt`.
+- `version`.
+- `deletedAt`, where soft deletion is supported.
+
+Local SQLite records should additionally maintain synchronization status.
+
+Use stable UUID identifiers to maintain consistency between SQLite and MongoDB.
+
+All database queries must enforce ownership using the authenticated user's ID.
+
+## 26.6 Database relationships
+
+- A user can have multiple categories.
+- A user can have multiple semesters.
+- A semester can contain multiple subjects.
+- A semester can contain multiple examinations.
+- A subject can have multiple attendance records.
+- A subject can have multiple timetable entries.
+- An examination can contain marks for multiple subjects.
+- A subject can contain multiple study topics.
+- A subject can have multiple notes and assignments.
+- A task can have multiple focus sessions.
+- A habit can have multiple habit logs.
+- A note can have multiple attachments.
+
+These relationships should be implemented through stable identifiers and appropriate indexes.
+
+---
+
+# 27. OFFLINE-FIRST FUNCTIONALITY
+
+Offline support is a fundamental requirement of MySpace.
+
+The user should not need an internet connection for normal application operations.
+
+## 27.1 Local operations
+
+When offline, users should be able to:
+
+- Create and edit tasks.
+- Complete tasks.
+- Record attendance.
+- View the timetable.
+- Add notes.
+- Update study preparation.
+- Record habit completion.
+- Use the Pomodoro timer.
+- View cached academic information.
+- Calculate grades from locally available records.
+
+## 27.2 Synchronization process
+
+1. The user performs an operation.
+2. The application saves the change in SQLite.
+3. The user immediately sees the updated information.
+4. The operation is recorded in the synchronization queue.
+5. The app detects an available network connection.
+6. Pending operations are sent to the backend.
+7. The backend authenticates the user and validates the request.
+8. MongoDB is updated.
+9. The backend returns the synchronization result.
+10. SQLite marks the successfully synchronized record as synced.
+
+## 27.3 Conflict handling
+
+Synchronization must account for:
+
+- Simultaneous changes.
+- Offline updates.
+- Deletions.
+- Failed requests.
+- Duplicate operations.
+- Interrupted uploads.
+
+Use record versions, idempotency keys and deletion tombstones.
+
+Last-updated-wins can be an initial conflict-resolution policy, but conflicting unsynchronized data must be preserved until the server confirms successful resolution.
+
+## 27.4 File synchronization
+
+Attachments should have their own upload and download queue.
+
+An attachment must not be marked as cloud-synced until its upload has been confirmed.
+
+---
+
+# 28. SECURITY AND PRIVACY
+
+Since MySpace stores personal and academic information, security is essential.
+
+Security requirements include:
+
+- Password hashing using bcrypt or an equivalent secure password-hashing algorithm.
+- JWT-based authentication.
+- Secure token storage on Android.
+- HTTPS communication.
+- Backend authorization.
+- User-specific data ownership.
+- Input validation.
+- Rate limiting for authentication endpoints.
+- Secure cloud file access.
+- File type and size validation.
+- Safe backup and restore operations.
+- Protection against unauthorized data access.
+
+Each authenticated user must only access their own records.
+
+The backend must verify ownership for every operation involving a user-owned resource.
+
+---
+
+# 29. NOTIFICATION AND BACKGROUND PROCESSING ARCHITECTURE
+
+The application should use device-side notifications for reminders that can be scheduled locally.
+
+The backend may support cloud-triggered notifications when required.
+
+Important technical considerations:
+
+- Notification permissions must be requested.
+- Scheduled notifications must be rescheduled when relevant records change.
+- Recurring reminders must respect their configured schedules.
+- Notification times must respect the user's timezone.
+- The application must recover timer and reminder state after interruptions.
+- Android battery optimization and background execution restrictions must be considered.
+
+The application should not rely on continuously running background processes for basic functionality.
+
+---
+
+# 30. API ARCHITECTURE
+
+The backend should expose organized REST API endpoints.
+
+## Authentication
+
+- `POST /auth/register`
+- `POST /auth/login`
+- `POST /auth/refresh`
+- `POST /auth/logout`
+
+## Tasks
+
+- `GET /tasks`
+- `POST /tasks`
+- `GET /tasks/:id`
+- `PUT /tasks/:id`
+- `DELETE /tasks/:id`
+
+## Categories
+
+- `GET /categories`
+- `POST /categories`
+- `PUT /categories/:id`
+- `DELETE /categories/:id`
+
+## College
+
+- `/semesters`
+- `/subjects`
+- `/exams`
+- `/marks`
+- `/assignments`
+- `/attendance`
+- `/timetable`
+- `/study-topics`
+
+Each resource should support appropriate create, read, update and delete operations.
+
+## Productivity
+
+- `/habits`
+- `/habit-logs`
+- `/focus-sessions`
+- `/reminders`
+
+## Notes and documents
+
+- `/notes`
+- `/attachments`
+
+## Analytics
+
+- `/analytics/productivity`
+- `/analytics/attendance`
+- `/analytics/academic`
+- `/analytics/gpa`
+
+## Backup and synchronization
+
+- `POST /sync`
+- `GET /sync/status`
+- `POST /backup/export`
+- `POST /backup/restore`
+
+The API design should use consistent validation, error responses, pagination where appropriate and authenticated ownership checks.
+
+---
+
+# 31. PROJECT FOLDER STRUCTURE
+
+A proposed development structure:
+
+MySpace/
+ 
+    mobile/
+        app/
+            (auth)/
+                login.tsx
+                register.tsx
+
+            (tabs)/
+                index.tsx
+                tasks.tsx
+                college.tsx
+                calendar.tsx
+                settings.tsx
+
+            attendance/
+            timetable/
+            semesters/
+            subjects/
+            exams/
+            marks/
+            assignments/
+            study/
+            focus/
+            notes/
+            habits/
+            analytics/
+            backup/
+
+        components/
+        constants/
+        database/
+        hooks/
+        notifications/
+        services/
+        store/
+        types/
+        utils/
+        assets/
+
+    backend/
+        src/
+            config/
+            models/
+            controllers/
+            routes/
+            middleware/
+            services/
+            validators/
+            utils/
+
+        server.js
+
+    documentation/
+        architecture/
+        database/
+        api/
+        development/
+
+    README.md
+
+Each module should have a clearly defined responsibility to make the project maintainable and extensible.
+
+---
+
+# 32. DEVELOPMENT ROADMAP
+
+Development should be completed incrementally.
+
+## Phase 1 – Project foundation
+
+- Initialize Expo React Native project.
+- Configure TypeScript.
+- Configure Expo Router.
+- Set up NativeWind.
+- Establish the design system.
+- Implement authentication screens.
+- Implement bottom navigation.
+- Implement dashboard.
+- Implement light and dark themes.
+- Create Universal Quick Add interface.
+- Initialize SQLite.
+
+## Phase 2 – Task management
+
+- Task CRUD operations.
+- Categories.
+- Priority and status.
+- Task filters.
+- Recurring tasks.
+- Task reminders.
+- Task history.
+
+## Phase 3 – Academic foundation
+
+- Semester management.
+- Subject management.
+- Examination management.
+- Assignment management.
+- Marks management.
+- Configurable grade calculation.
+- SGPA and CGPA.
+
+## Phase 4 – Attendance and timetable
+
+- Attendance recording.
+- Attendance calculations.
+- Attendance warnings.
+- Weekly timetable.
+- Daily class schedule.
+- Class reminders.
+
+## Phase 5 – Study and productivity
+
+- Pomodoro timer.
+- Focus history.
+- Habit management.
+- Habit streaks.
+- Exam preparation tracker.
+- Revision tracking.
+
+## Phase 6 – Notes and documents
+
+- Notes CRUD operations.
+- Search and categorization.
+- Document selection.
+- Local attachment storage.
+- Cloud attachment storage.
+
+## Phase 7 – Backend and cloud integration
+
+- Express backend.
+- MongoDB Atlas.
+- Authentication and authorization.
+- API integration.
+- SQLite integration.
+- Offline synchronization.
+- Conflict handling.
+
+## Phase 8 – Notifications and backup
+
+- Local notifications.
+- Daily briefing.
+- Cloud backup.
+- JSON and CSV exports.
+- PDF reports.
+- ZIP backup.
+- Restore functionality.
+
+## Phase 9 – Testing and release
+
+- Functional testing.
+- Offline testing.
+- Synchronization testing.
+- Database testing.
+- Security testing.
+- Performance optimization.
+- UI testing.
+- Android APK/AAB generation.
+- Release preparation.
+
+---
+
+# 33. TESTING REQUIREMENTS
+
+The application should be tested across the following areas.
+
+## Functional testing
+
+Every feature must be tested for create, read, update and delete operations where applicable.
+
+## Offline testing
+
+Verify that important features remain functional without internet access.
+
+## Synchronization testing
+
+Test network interruptions, duplicate requests, conflicting updates and failed uploads.
+
+## Academic calculation testing
+
+Verify attendance, marks, grades, SGPA and CGPA against known examples and the configured college rules.
+
+## Notification testing
+
+Test scheduled notifications, permission denial, time changes and device restarts.
+
+## Backup testing
+
+Verify exported files, restore operations and attachment integrity.
+
+## Security testing
+
+Verify authentication, authorization, data isolation and file access restrictions.
+
+---
+
+# 34. FUTURE EXTENSIBILITY
+
+The architecture should allow future modules without requiring a complete redesign.
+
+Potential future additions include:
+
+- AI-powered study assistant.
+- AI-based timetable recommendations.
+- Smart task prioritization.
+- Intelligent rescheduling.
+- Document search.
+- OCR-based document extraction.
+- Advanced academic analytics.
+- Personalized study recommendations.
+- Widget support.
+- Biometric app lock.
+- Multi-device synchronization improvements.
+
+These are future possibilities, not requirements for the first release.
+
+---
+
+# 35. EXPECTED FINAL PRODUCT
+
+The completed MySpace application should function as a comprehensive personal productivity and academic management platform.
+
+A user should be able to:
+
+- Start the day by checking the dashboard.
+- Review and complete daily tasks.
+- Follow the college timetable.
+- Record attendance after every class.
+- Monitor attendance percentages.
+- Manage semesters and subjects.
+- Track assignments and examination dates.
+- Enter examination marks.
+- Calculate grades, SGPA and CGPA.
+- Prepare for examinations using syllabus topics.
+- Schedule and complete Pomodoro sessions.
+- Track daily study hours.
+- Maintain personal and academic notes.
+- Attach and access important documents.
+- Develop productive habits.
+- Review personal and academic performance.
+- Receive important notifications.
+- Back up and export personal information.
+- Continue using essential application features without internet access.
+
+All of these operations should be available through a unified, attractive and easy-to-use Android interface.
+
+## FINAL PROJECT VISION
+
+**MySpace is more than a task management application. It is a personal digital workspace that combines everyday productivity, academic organization, study planning, personal development and information management into one intelligent, offline-first Android application.**
+
+Its purpose is to reduce the need for multiple disconnected applications and provide a single reliable environment for managing everyday responsibilities and academic life.
+
+The final product should be modular, secure, maintainable, scalable and designed to grow with the user's needs.

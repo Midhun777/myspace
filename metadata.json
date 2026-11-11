@@ -1,0 +1,6 @@
+{
+  "name": "MySpace",
+  "description": "All-in-one personal productivity and academic management companion with timetable, tasks, exams, GPA, and AI study illustrations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
